@@ -5,14 +5,16 @@ getJSON.onclick=()=>{
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
-            if(request.status>=200 && request.status<300){
+            if(request.status>=200){
                 console.log(typeof request.response)
                 console.log(request.response)
                 const bool=JSON.parse(request.response)
                 //json字符串转变为js数据
                 console.log(typeof bool)
                 console.log(bool)
-            };
+            }else {
+                alert("加载 CSS 失败");
+              };
         }
     }
     request.send();
@@ -24,12 +26,14 @@ getXML.onclick=()=>{
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
-            if(request.status>=200 && request.status<300){
+            if(request.status>=200){
                 // console.log(request.response);
                 const dom = request.responseXML;
                 const text = dom.getElementsByTagName("warning")[0].textContent;
                 console.log(text.trim());
-            };
+            }else {
+                alert("加载 CSS 失败");
+              };
         }
     }
     request.send();
@@ -40,12 +44,14 @@ getHTML.onclick=()=>{
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
-            if(request.status>=200 && request.status<300){
+            if(request.status>=200){
                 const html=document.createElement("html");
                 console.log(request.response);
                 html.innerHTML=request.response;
                 document.body.appendChild(html);
-            };
+            }else {
+                alert("加载 CSS 失败");
+              };
         }
     }
     request.send();
@@ -57,12 +63,14 @@ getJS.onclick=()=>{
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
-            if(request.status>=200 && request.status<300){
+            if(request.status>=200){
                 const script=document.createElement("script");
                 console.log(request.response);
                 script.innerHTML=request.response;
                 document.body.appendChild(script);
-            };
+            }else {
+                alert("加载 CSS 失败");
+              };
         }
     }
     request.send();
@@ -74,7 +82,7 @@ getCSS.onclick=()=>{
         console.log(request.readyState);
         // 下载完成，但不知道是成功 2xx 还是失败 4xx 5xx
         if (request.readyState === 4) {
-          if (request.status >= 200 && request.status < 300) {
+          if (request.status >= 200 ) {
             // 创建 style 标签
             const style = document.createElement("style");
             // 填写 style 内容
