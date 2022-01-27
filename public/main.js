@@ -1,7 +1,7 @@
 console.log('我是main.js')
 getJSON.onclick=()=>{
     const request=new XMLHttpRequest();
-    request.open('GET','/public/5.json');
+    request.open('GET','/5.json');
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
@@ -20,7 +20,7 @@ getJSON.onclick=()=>{
 
 getXML.onclick=()=>{
     const request=new XMLHttpRequest();
-    request.open('GET','/public/4.xml');
+    request.open('GET','/4.xml');
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
@@ -36,7 +36,7 @@ getXML.onclick=()=>{
 }
 getHTML.onclick=()=>{
     const request=new XMLHttpRequest();
-    request.open('GET','/public/3.html');
+    request.open('GET','/3.html');
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
@@ -53,7 +53,7 @@ getHTML.onclick=()=>{
 
 getJS.onclick=()=>{
     const request=new XMLHttpRequest();
-    request.open('GET','/public/2.js');
+    request.open('GET','/2.js');
     request.onreadystatechange=()=>{
         console.log(request.readyState);
         if(request.readyState===4){
@@ -69,7 +69,7 @@ getJS.onclick=()=>{
 }
 getCSS.onclick=()=>{
     const request=new XMLHttpRequest();
-    request.open('GET','/public/style.css');
+    request.open('GET','/style.css');
     request.onreadystatechange = () => {
         console.log(request.readyState);
         // 下载完成，但不知道是成功 2xx 还是失败 4xx 5xx
